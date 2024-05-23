@@ -32,6 +32,7 @@ public class AutoGUI extends javax.swing.JFrame {
         mnuLeallit = new javax.swing.JMenuItem();
         mnuTankol = new javax.swing.JMenuItem();
         mnuKerek = new javax.swing.JMenuItem();
+        mnuMegy = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -109,6 +110,14 @@ public class AutoGUI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(mnuKerek);
+
+        mnuMegy.setText("Megy");
+        mnuMegy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuMegyActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuMegy);
 
         jMenuBar1.add(jMenu1);
 
@@ -234,6 +243,15 @@ public class AutoGUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_mnuKerekActionPerformed
+
+    private void mnuMegyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMegyActionPerformed
+        if(beinditva){
+            JOptionPane.showMessageDialog(rootPane, "Mentél a kocsival!");
+            EsemenyTxt.setText("Vroom Vroom");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Nincs beindítva az autó!");
+        }
+    }//GEN-LAST:event_mnuMegyActionPerformed
     private void kiiras(String kerdes, String igen, String nem) throws HeadlessException {
         valasz = JOptionPane.showConfirmDialog(rootPane, kerdes);
         if(valasz == JOptionPane.YES_OPTION){
@@ -286,6 +304,7 @@ public class AutoGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnuBeindit;
     private javax.swing.JMenuItem mnuKerek;
     private javax.swing.JMenuItem mnuLeallit;
+    private javax.swing.JMenuItem mnuMegy;
     private javax.swing.JMenuItem mnuTankol;
     private javax.swing.JSlider sldDefekt;
     private javax.swing.JSpinner spnPotkerek;
